@@ -9,7 +9,8 @@ public class PlayerAnimationData
     [SerializeField] private string runParameterName = "Run";
 
     [SerializeField] private string attackParameterName = "@Attack";
-    [SerializeField] private string idleAttackParameterName = "IdleAttack";
+    [SerializeField] private string isAttackParameterName = "Attack";
+    [SerializeField] private string attackIdxParameterName = "AttackIdx";
     // 스킬 제작 시 Animator 추가
 
     public int IntroParameterHash { get; private set; }
@@ -17,7 +18,8 @@ public class PlayerAnimationData
     public int RunParameterHash { get; private set; }
     
     public int AttackParameterHash { get; private set; }
-    public int IdleAttackParameterHash { get; private set; }
+    public int IsAttackParameterName { get; private set; }
+    public int AttackIdxParameterName {  get; private set; }
 
 
     public void Initialize()
@@ -27,6 +29,7 @@ public class PlayerAnimationData
         RunParameterHash = Animator.StringToHash(runParameterName);
 
         AttackParameterHash = Animator.StringToHash(attackParameterName);
-        IdleAttackParameterHash = Animator.StringToHash(idleAttackParameterName);
+        IsAttackParameterName = Animator.StringToHash(isAttackParameterName);
+        AttackIdxParameterName = Animator.StringToHash(attackIdxParameterName);
     }
 }

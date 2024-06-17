@@ -9,7 +9,7 @@ public class PlayerRunState : PlayerBaseState
     public override void Enter()
     {
         base.Enter();
-        stateMachine.MovementSpeedModifier *= 10;
+        stateMachine.MovementSpeedModifier *= 5f;
         StartAnimation(stateMachine.Player.AnimationData.RunParameterHash);
     }
 
@@ -39,7 +39,9 @@ public class PlayerRunState : PlayerBaseState
 
     private Vector3 GetMovementDirection()
     {
-        return (stateMachine.Target.transform.position - stateMachine.Player.transform.position).normalized;
+        Vector3 dir = (stateMachine.Target.transform.position - stateMachine.Player.transform.position).normalized;
+        Vector3 dirOut = new Vector3(dir.x, 0, dir.z);
+        return dirOut;
     }
 
     private void Rotate(Vector3 movementDir)

@@ -26,6 +26,5 @@ public class PlayerStateMachine : StateMachine
         IntroState = new PlayerIntroState(this);
         IdleState = new PlayerIdleState(this);
         RunState = new PlayerRunState(this);
-
     }
 }
