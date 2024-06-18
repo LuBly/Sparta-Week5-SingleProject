@@ -17,6 +17,6 @@ MonoBehaviour:
   <AttackData>k__BackingField:
     <AtkName>k__BackingField: "\uB9C8\uC9F1\uB728\uC790"
     <AtkIdx>k__BackingField: 0
-    <AtkRange>k__BackingField: 5
+    <AtkRange>k__BackingField: 30
     <AtkDamage>k__BackingField: 10
-    <AtkDelay>k__BackingField: 0.5
+    <AtkSpeed>k__BackingField: 1.4
