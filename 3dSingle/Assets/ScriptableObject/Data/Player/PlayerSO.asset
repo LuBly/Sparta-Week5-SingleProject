@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <BaseMoveSpeed>k__BackingField: 5
   <RotationDamping>k__BackingField: 8
-  <AttackDatas>k__BackingField:
-  - <AtkName>k__BackingField: IdleAtk
+  <AttackData>k__BackingField:
+    <AtkName>k__BackingField: "\uB9C8\uC9F1\uB728\uC790"
     <AtkIdx>k__BackingField: 0
-    <AtkRange>k__BackingField: 2
+    <AtkRange>k__BackingField: 5
     <AtkDamage>k__BackingField: 10
+    <AtkDelay>k__BackingField: 0.5

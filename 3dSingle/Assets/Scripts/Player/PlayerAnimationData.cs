@@ -9,17 +9,19 @@ public class PlayerAnimationData
     [SerializeField] private string runParameterName = "Run";
 
     [SerializeField] private string attackParameterName = "@Attack";
-    [SerializeField] private string isAttackParameterName = "Attack";
-    [SerializeField] private string attackIdxParameterName = "AttackIdx";
-    // ½ºÅ³ Á¦ÀÛ ½Ã Animator Ãß°¡
+    [SerializeField] private string attackSpeedParameterName = "AttackSpeed";
+    [SerializeField] private string skillParameterName = "Skill";
+    [SerializeField] private string skillIdxParameterName = "SkillIdx";
+    // ìŠ¤í‚¬ ì œìž‘ ì‹œ Animator ì¶”ê°€
 
     public int IntroParameterHash { get; private set; }
     public int IdleParameterHash { get; private set; }
     public int RunParameterHash { get; private set; }
     
     public int AttackParameterHash { get; private set; }
-    public int IsAttackParameterName { get; private set; }
-    public int AttackIdxParameterName {  get; private set; }
+    public int AttackSpeedParameterHash { get; private set; }
+    public int SkillParameterHash { get; private set; }
+    public int SkillIdxParameterHash { get; private set; }
 
 
     public void Initialize()
@@ -29,7 +31,9 @@ public class PlayerAnimationData
         RunParameterHash = Animator.StringToHash(runParameterName);
 
         AttackParameterHash = Animator.StringToHash(attackParameterName);
-        IsAttackParameterName = Animator.StringToHash(isAttackParameterName);
-        AttackIdxParameterName = Animator.StringToHash(attackIdxParameterName);
+        AttackSpeedParameterHash = Animator.StringToHash(attackSpeedParameterName);
+
+        SkillParameterHash = Animator.StringToHash(skillParameterName);
+        SkillIdxParameterHash = Animator.StringToHash(skillIdxParameterName);
     }
 }

@@ -8,6 +8,8 @@ public class PlayerStateMachine : StateMachine
     public PlayerIdleState IdleState { get; private set; }
     public PlayerIntroState IntroState { get; private set; }
     public PlayerRunState RunState { get; private set; }
+    public PlayerAttackState AttackState { get; private set; }
+
     // ±¸Çö
     public float MovementSpeed { get; private set; }
     public float MovementSpeedModifier { get; set; } = 1f;
@@ -26,5 +28,6 @@ public class PlayerStateMachine : StateMachine
         IntroState = new PlayerIntroState(this);
         IdleState = new PlayerIdleState(this);
         RunState = new PlayerRunState(this);
+        AttackState = new PlayerAttackState(this);
     }
 }

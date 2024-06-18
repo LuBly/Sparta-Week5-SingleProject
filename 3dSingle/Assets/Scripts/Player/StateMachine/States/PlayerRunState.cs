@@ -5,7 +5,8 @@ public class PlayerRunState : PlayerBaseState
     public PlayerRunState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
     }
-
+    private float updateDelay = 0.5f;
+    private float timer = 0f;
     public override void Enter()
     {
         base.Enter();
@@ -22,6 +23,14 @@ public class PlayerRunState : PlayerBaseState
     public override void Update()
     {
         base.Update();
+        timer += Time.deltaTime;
+        if (timer > updateDelay)
+        {
+            if (IsTargetInRange())
+                stateMachine.ChangeState(stateMachine.AttackState);
+
+            timer = 0f;
+        }
     }
 
     public override void PhysicsUpdate()
@@ -66,5 +75,11 @@ public class PlayerRunState : PlayerBaseState
     private float GetMovementSpeed()
     {
         return stateMachine.MovementSpeed * stateMachine.MovementSpeedModifier;
+    }
+
+    private bool IsTargetInRange()
+    {
+        float dist = Vector3.Distance(stateMachine.Target.transform.position, stateMachine.Player.transform.position);
+        return dist < stateMachine.Player.Stat.AttackData.AtkRange;
     }
 }
